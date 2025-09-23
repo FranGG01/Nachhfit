@@ -1,26 +1,30 @@
+/* src/app/globals.css */
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 🎨 Paleta y tokens Tailwind v4 */
+@theme {
+  /* Colores base de la UI */
+  --color-background: #0B0B0B; /* negro suave NF */
+  --color-foreground: #EAEAEA; /* blanco/gris NF */
+
+  /* Paleta NachhFit reutilizable */
+  --color-nf-yellow: #F6C739;
+  --color-nf-black:  #0B0B0B;
+  --color-nf-white:  #EAEAEA;
+
+  /* (opcional) fuentes si quieres tokens */
+  /* --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial; */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* (opcional) modo claro/oscuro por sistema */
+@media (prefers-color-scheme: light) {
+  @theme {
+    --color-background: #ffffff;
+    --color-foreground: #171717;
   }
 }
 
+/* Puedes quitar estas reglas si usas utilidades en <body> */
 body {
-  background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

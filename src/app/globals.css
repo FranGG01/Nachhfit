@@ -1,22 +1,17 @@
 /* src/app/globals.css */
 @import "tailwindcss";
 
-/* 🎨 Paleta y tokens Tailwind v4 */
 @theme {
-  /* Colores base de la UI */
+
   --color-background: #0B0B0B; /* negro suave NF */
   --color-foreground: #EAEAEA; /* blanco/gris NF */
 
-  /* Paleta NachhFit reutilizable */
   --color-nf-yellow: #F6C739;
   --color-nf-black:  #0B0B0B;
   --color-nf-white:  #EAEAEA;
 
-  /* (opcional) fuentes si quieres tokens */
-  /* --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial; */
 }
 
-/* (opcional) modo claro/oscuro por sistema */
 @media (prefers-color-scheme: light) {
   @theme {
     --color-background: #ffffff;
@@ -24,7 +19,20 @@
   }
 }
 
-/* Puedes quitar estas reglas si usas utilidades en <body> */
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(1.05); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 8s ease-in-out infinite;
+  }
+  .animate-pulse-glow-delayed {
+    animation: pulse-glow 10s ease-in-out infinite 2s;
+  }
 }

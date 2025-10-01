@@ -18,11 +18,6 @@ export default function Contact() {
   const msgPrices =
     "Hola NachhFit, ¿me pasas info de precios y disponibilidad?";
 
-  // (opcional) mini tracking si usas GA
-  function track(label: string) {
-    // @ts-ignore
-    window.gtag?.("event", "click_whatsapp", { label });
-  }
 
   return (
     <Section id="contacto" title="Hablemos" className="relative bg-nf-black overflow-hidden">

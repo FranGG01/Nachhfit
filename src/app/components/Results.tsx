@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import Section from "./Section";
 import { RESULTS, type ResultItem } from "./resultsData";
+/* eslint-disable react/no-unescaped-entities */
 
 function ResultCard({
   item,

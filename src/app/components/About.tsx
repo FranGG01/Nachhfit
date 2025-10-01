@@ -81,7 +81,7 @@ export default function About() {
             {/* Contenedor responsive (4:5) */}
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-nf-white/10 shadow-2xl">
               <Image
-                src="/QuienSoy.jpg"
+                src="/images/QuienSoy.jpg"
                 alt="NachhFit entrenando con cliente, enfoque en técnica y fuerza"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

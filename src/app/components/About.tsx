@@ -1,7 +1,7 @@
+// src/app/components/About.tsx
 "use client";
-/* eslint-disable react/no-unescaped-entities */
 
-import Image from 'next/image';
+import Image from "next/image";
 import Section from "./Section";
 
 export default function About() {
@@ -19,10 +19,9 @@ export default function About() {
               Soy <span className="text-nf-yellow font-semibold">NachhFit</span>, entrenador personal especializado en{" "}
               <strong className="text-nf-white">fuerza</strong> y <strong className="text-nf-white">educación del movimiento</strong>.
             </p>
-            
+
             <p className="text-lg text-nf-white/90 leading-relaxed">
-              Mi objetivo es que <span className="text-nf-yellow">aprendas a entrenar con criterio</span>, 
-              mejores tu técnica y consigas resultados sostenibles que duren en el tiempo.
+              Mi objetivo es que <span className="text-nf-yellow">aprendas a entrenar con criterio</span>, mejores tu técnica y consigas resultados sostenibles que duren en el tiempo.
             </p>
           </div>
 
@@ -72,32 +71,35 @@ export default function About() {
           </div>
         </div>
 
+        {/* Imagen + halo + quote */}
         <div className="order-1 md:order-2 relative group">
-          <div className="absolute -inset-4 bg-gradient-to-br from-nf-yellow/20 to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
-          {/* Container principal */}
+          <div
+            className="absolute -inset-4 bg-gradient-to-br from-nf-yellow/20 to-transparent rounded-2xl blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            aria-hidden
+          />
           <div className="relative">
-<div className="relative w-full h-[600px] rounded-2xl overflow-hidden border border-nf-white/10 shadow-2xl">
+            {/* Contenedor responsive (4:5) */}
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden border border-nf-white/10 shadow-2xl">
               <Image
                 src="/QuienSoy.jpg"
-                alt="Sobre NachhFit"
+                alt="NachhFit entrenando con cliente, enfoque en técnica y fuerza"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-nf-black/60 via-nf-black/10 to-transparent" />
-              
+
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="p-5 rounded-xl bg-nf-black/80 backdrop-blur-md border border-nf-white/10">
                   <p className="text-nf-white font-medium text-lg italic leading-relaxed">
-                    "No entreno personas, <span className="text-nf-yellow">educo atletas</span>"
+                    &ldquo;No entreno personas, <span className="text-nf-yellow">educo atletas</span>&rdquo;
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Stats flotantes */}
-            <div className="absolute -bottom-6 -right-6 grid grid-cols-2 gap-3">
+            {/* Stats flotantes (ocultas en móvil) */}
+            <div className="absolute -bottom-6 -right-6 grid grid-cols-2 gap-3 hidden sm:grid">
               <div className="p-4 rounded-xl bg-nf-black border border-nf-white/10 shadow-xl backdrop-blur-sm">
                 <div className="text-2xl font-bold text-nf-yellow">5+</div>
                 <div className="text-xs text-nf-white/60">Años</div>
@@ -110,8 +112,15 @@ export default function About() {
           </div>
 
           {/* Elementos decorativos */}
-          <div className="absolute -top-6 -left-6 w-24 h-24 bg-nf-yellow/10 rounded-full blur-2xl animate-pulse" />
-          <div className="absolute top-1/2 -right-8 w-32 h-32 bg-nf-yellow/10 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1.5s' }} />
+          <div
+            className="absolute -top-6 -left-6 w-24 h-24 bg-nf-yellow/10 rounded-full blur-2xl animate-pulse"
+            aria-hidden
+          />
+          <div
+            className="absolute top-1/2 -right-8 w-32 h-32 bg-nf-yellow/10 rounded-full blur-2xl animate-pulse"
+            style={{ animationDelay: "1.5s" }}
+            aria-hidden
+          />
         </div>
       </div>
     </Section>

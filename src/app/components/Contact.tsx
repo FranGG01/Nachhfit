@@ -1,27 +1,35 @@
+// src/app/components/Contact.tsx
 "use client";
 import Section from "./Section";
 
-const PHONE = "34633809585"; 
+// Tipado de gtag (opcional)
+declare global {
+  interface Window {
+    gtag?: (...args: any[]) => void;
+  }
+}
+
+// Tracking mini (si tienes GA)
+function track(label: string) {
+  window.gtag?.("event", "click_whatsapp", { label });
+}
+
+const PHONE = "34633809585"; // ← tu número con prefijo país
 
 function waLink(text: string) {
-  
   const msg = encodeURIComponent(text);
   return `https://wa.me/${PHONE}?text=${msg}`;
 }
 
 export default function Contact() {
   // Mensajes predefinidos
-  const msgStart =
-    "Hola NachhFit, quiero empezar. Te cuento mi objetivo:";
-  const msgDoubt =
-    "Hola NachhFit, tengo una duda rápida sobre los servicios.";
-  const msgPrices =
-    "Hola NachhFit, ¿me pasas info de precios y disponibilidad?";
-
+  const msgStart = "Hola NachhFit, quiero empezar. Te cuento mi objetivo:";
+  const msgDoubt = "Hola NachhFit, tengo una duda rápida sobre los servicios.";
+  const msgPrices = "Hola NachhFit, ¿me pasas info de precios y disponibilidad?";
 
   return (
     <Section id="contacto" title="Hablemos" className="relative bg-nf-black overflow-hidden">
-      {/* Fondo estilo Hero */}
+      {/* Patrón de grid sutil */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.03]"
         style={{
@@ -32,6 +40,7 @@ export default function Contact() {
           backgroundSize: "50px 50px",
         }}
       />
+      {/* Halos animados */}
       <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute top-0 left-0 w-[800px] h-[800px] rounded-full blur-[120px] opacity-20"
@@ -60,7 +69,7 @@ export default function Contact() {
           Escríbeme por WhatsApp y te doy los siguientes pasos. Elige un atajo o envíame tu mensaje.
         </p>
 
-        {/* Botón principal */}
+        {/* Botones */}
         <div className="flex flex-wrap gap-4">
           <a
             href={waLink(msgStart)}
@@ -78,7 +87,6 @@ export default function Contact() {
             <div className="absolute inset-0 bg-gradient-to-r from-nf-yellow to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </a>
 
-          {/* Atajos rápidos */}
           <a
             href={waLink(msgDoubt)}
             onClick={() => track("duda_rapida")}
@@ -88,6 +96,7 @@ export default function Contact() {
           >
             Duda rápida
           </a>
+
           <a
             href={waLink(msgPrices)}
             onClick={() => track("precios_disponibilidad")}
@@ -99,7 +108,7 @@ export default function Contact() {
           </a>
         </div>
 
-        {/* Nota legal breve */}
+        {/* Nota legal */}
         <p className="mt-8 text-sm text-nf-white/60 flex items-center gap-2">
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2h-3m-7 0H6a2 2 0 00-2 2v6a2 2 0 002 2h0m6-14V7a4 4 0 118 0v2" />

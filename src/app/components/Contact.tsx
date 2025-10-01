@@ -2,19 +2,17 @@
 "use client";
 import Section from "./Section";
 
-// Tipado de gtag (opcional)
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (...args: unknown[]) => void; 
   }
 }
 
-// Tracking mini (si tienes GA)
 function track(label: string) {
   window.gtag?.("event", "click_whatsapp", { label });
 }
 
-const PHONE = "34633809585"; // ← tu número con prefijo país
+const PHONE = "34633809585"; 
 
 function waLink(text: string) {
   const msg = encodeURIComponent(text);
@@ -22,7 +20,6 @@ function waLink(text: string) {
 }
 
 export default function Contact() {
-  // Mensajes predefinidos
   const msgStart = "Hola NachhFit, quiero empezar. Te cuento mi objetivo:";
   const msgDoubt = "Hola NachhFit, tengo una duda rápida sobre los servicios.";
   const msgPrices = "Hola NachhFit, ¿me pasas info de precios y disponibilidad?";

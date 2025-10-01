@@ -64,37 +64,3 @@ export default function ServiceCard({
   );
 }
 
-// Demo
-function Demo() {
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-nf-black via-gray-900 to-nf-black p-8">
-      <div className="max-w-4xl mx-auto space-y-6">
-        <h1 className="text-4xl font-extrabold text-nf-white mb-8 text-center">
-          Nuestros Servicios
-        </h1>
-        
-        <ServiceCard
-          label="Desarrollo Web"
-          title="Sitios Web Profesionales"
-          desc="Creamos experiencias digitales modernas y responsivas que destacan tu marca y convierten visitantes en clientes."
-          icon="🚀"
-        />
-        
-        <ServiceCard
-          label="Diseño UI/UX"
-          title="Interfaces Intuitivas"
-          desc="Diseñamos interfaces que combinan estética y funcionalidad para ofrecer la mejor experiencia de usuario."
-          icon="🎨"
-        />
-        
-        <ServiceCard
-          label="E-Commerce"
-          title="Tiendas Online"
-          desc="Plataformas de comercio electrónico optimizadas para maximizar tus ventas y facilitar la gestión de tu negocio."
-          icon="🛍️"
-          ctaText="Empezar ahora"
-        />
-      </div>
-    </div>
-  );
-}

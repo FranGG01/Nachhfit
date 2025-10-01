@@ -76,9 +76,9 @@ export default function About() {
           
           {/* Container principal */}
           <div className="relative">
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-nf-white/10 shadow-2xl">
+<div className="relative w-full h-[600px] rounded-2xl overflow-hidden border border-nf-white/10 shadow-2xl">
               <Image
-                src="/images/about-training.jpg"
+                src="/QuienSoy.jpg"
                 alt="Sobre NachhFit"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"

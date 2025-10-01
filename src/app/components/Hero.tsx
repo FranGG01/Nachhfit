@@ -128,7 +128,7 @@ export default function Hero() {
             {/* Container de imagen */}
             <div className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-nf-white/10 shadow-2xl">
               <Image
-                src=""
+                src="/images/Logo.jpg"
                 alt="NachhFit entrenando"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
